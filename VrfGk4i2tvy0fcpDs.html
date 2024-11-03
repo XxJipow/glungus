@@ -1,0 +1,513 @@
+<html><head>
+<title>Glungus</title>
+<link rel="icon" href="pfp.png" type="image/x-icon">
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-image: url('https://file.garden/ZuVWBvHqjV5ssvlO/spacejam.png');
+    background-repeat: repeat;
+    cursor: none;
+    overflow: auto; /* Change from hidden to auto */
+}
+
+.container {
+    padding: 2rem;
+    font-size: 1.2em;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    margin: 10px;
+}
+
+.website-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1600px;
+    gap: 30px;
+    padding: 40px;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.nav-item {
+    flex: 1;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    flex-direction: column; 
+}
+
+.main-content {
+    flex: 2;
+}
+
+.sidebar {
+    flex: 1;
+}
+
+.footer {
+    width: 100%;
+}
+
+.text {
+    font-size: 24px;
+    color: #fff;
+    margin: 0;
+}
+
+#cursor {
+    position: fixed;
+    pointer-events: none;
+    width: 84px;
+    height: 84px;
+    z-index: 9999;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.piece {
+    position: absolute;
+    background-color: #000;
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    transform-origin: center center;
+}
+
+.shard {
+    position: absolute;
+    background-image: url('https://file.garden/ZuVWBvHqjV5ssvlO/sharddark.png');
+    background-size: cover;
+    border: none;
+    transform-origin: center center;
+}
+
+.ad-container {
+    text-align: center;
+    padding: 1rem;
+}
+
+.ad-image {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+    display: block;
+}
+
+.ad-container .text {
+    font-size: 18px;
+    margin: 0.5rem 0;
+}
+</style></head><body>
+    <audio id="shatterSound" preload="auto">
+        <source src="https://file.garden/ZuVWBvHqjV5ssvlO/sfx/6.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="impactSound" preload="auto">
+        <source src="https://file.garden/ZuVWBvHqjV5ssvlO/impact.mp3" type="audio/mpeg">
+    </audio>
+    <div id="live-reaction" style="position: fixed; top: 20px; left: 20px; z-index: 9998;">
+        <img src="https://file.garden/ZuVWBvHqjV5ssvlO/normol.png" alt="Live reaction face - normal expression" width="350" height="200">
+    </div>
+    <div class="website-layout">
+        <div class="header container">
+            <img src="https://file.garden/ZuVWBvHqjV5ssvlO/logo.png" alt="Glungusweb logo" width="300" height="100" class="logo">
+            <p class="text">Glungusweb</p>
+        </div>
+        
+        <div class="nav">
+            <div class="nav-item container">
+                <p class="text">Home</p>
+            </div>
+            <div class="nav-item container">
+                <p class="text">About</p>
+            </div>
+            <div class="nav-item container">
+                <p class="text">Contact</p>
+            </div>
+        </div>
+        
+        <div class="content">
+        <div class="main-content container">
+            <p class="text">Welcome to GlungusWeb!</p>
+        </div>
+        
+        <div class="main-content container">
+            <p class="text">[placeholder]!</p>
+        </div>
+
+        <div class="main-content container">
+            <p class="text">we gave you a hammer, enjoy ruining 20 years of glungusweb team work</p>
+        </div>
+
+        <div class="main-content container">
+            <p class="text">Latest Glungus News</p>
+        </div>
+
+        <div class="main-content container">
+            <p class="text">Glungus Technology Updates</p>
+        </div>
+
+        <div class="main-content container">
+            <p class="text">Glungus Community Forum</p>
+        </div>
+
+        <div class="main-content container">
+            <p class="text">Glungus Event Calendar</p>
+        </div>
+
+        <div class="main-content container">
+            <p class="text">Glungus Development Blog</p>
+        </div>
+
+        <div class="main-content container">
+            <p class="text">Glungus User Stories</p>
+        </div>
+
+        <div class="main-content container">
+            <p class="text">Glungus Support Center</p>
+        </div>
+
+        <div class="sidebar container">
+            <p class="text">glungus</p>
+        </div>
+
+        <div class="sidebar container">
+            <p class="text">insert looping thing here</p>
+        </div>
+
+        <div class="sidebar container">
+            <p class="text">Featured Glungus</p>
+        </div>
+
+        <div class="sidebar container">
+            <p class="text">Glungus Archive</p>
+        </div>
+
+        <div class="sidebar container">
+            <p class="text">Glungus Resources</p>
+        </div>
+
+        <div class="sidebar container ad-container">
+            <p class="text">ADVERTISEMENT</p>
+            <img src="https://file.garden/ZuVWBvHqjV5ssvlO/glungus.png" alt="Glungus product advertisement" width="200" height="200" class="ad-image">
+            <p class="text">Buy Glungus™ Today!</p>
+        </div>
+
+        <div class="sidebar container ad-container">
+            <p class="text">ADVERTISEMENT</p>
+            <img src="https://file.garden/ZuVWBvHqjV5ssvlO/glungus.png" alt="Glungus product advertisement" width="200" height="200" class="ad-image">
+            <p class="text">NEW: Glungus Plus+</p>
+        </div>
+
+        <div class="sidebar container ad-container">
+            <p class="text">ADVERTISEMENT</p>
+            <img src="https://file.garden/ZuVWBvHqjV5ssvlO/glungus.png" alt="Glungus product advertisement" width="200" height="200" class="ad-image">
+            <p class="text">PREMIUM Glungus™</p>
+        </div>
+
+        <div class="sidebar container ad-container">
+            <p class="text">ADVERTISEMENT</p>
+            <img src="https://file.garden/ZuVWBvHqjV5ssvlO/glungus.png" alt="Glungus product advertisement" width="200" height="200" class="ad-image">
+            <p class="text">MEGA Glungus™</p>
+        </div>
+
+        <div class="sidebar container">
+            <p class="text">Glungus Tips</p>
+        </div>
+
+        </div>
+        
+        <div class="footer container">
+            <p class="text">Glungusweb © 6900</p>
+        </div>
+    </div>
+    <img id="cursor" src="https://file.garden/ZuVWBvHqjV5ssvlO/hammer.png" alt="pixel art hammer cursor" width="64" height="64">
+
+    <script>
+    document.addEventListener('mousemove', (e) => {
+        const cursor = document.getElementById('cursor');
+        cursor.style.left = e.pageX + 'px';
+        cursor.style.top = e.pageY + 'px';
+    });
+
+    document.addEventListener('click', () => {
+        const impactSound = document.getElementById('impactSound');
+        // Random pitch between 0.8 and 1.2
+        impactSound.playbackRate = 0.8 + Math.random() * 0.4;
+        impactSound.currentTime = 0;
+        impactSound.play();
+    });
+
+    document.addEventListener('mousedown', () => {
+        const cursor = document.getElementById('cursor');
+        cursor.src = 'https://file.garden/ZuVWBvHqjV5ssvlO/hammerhit.png';
+    });
+
+    document.addEventListener('mouseup', () => {
+        const cursor = document.getElementById('cursor');
+        cursor.src = 'https://file.garden/ZuVWBvHqjV5ssvlO/hammer.png';
+    });
+
+    const containers = document.querySelectorAll('.container');
+    let broken = new Set();
+    let pieces = [];
+    let shards = [];
+    const liveReaction = document.querySelector('#live-reaction img');
+    const totalContainers = containers.length;
+
+    function updateReaction() {
+        const brokenCount = broken.size;
+        
+        if (brokenCount === 0) {
+            liveReaction.src = 'https://file.garden/ZuVWBvHqjV5ssvlO/normol.png';
+            liveReaction.alt = 'Live reaction face - normal expression';
+        } else if (brokenCount === totalContainers) {
+            liveReaction.src = 'https://file.garden/ZuVWBvHqjV5ssvlO/despair.png';
+            liveReaction.alt = 'Live reaction face - despair expression';
+        } else {
+            liveReaction.src = 'https://file.garden/ZuVWBvHqjV5ssvlO/sob.png';
+            liveReaction.alt = 'Live reaction face - sobbing expression';
+        }
+    }
+
+    containers.forEach(container => {
+        container.addEventListener('click', () => {
+            if (broken.has(container)) return;
+            
+            document.getElementById('shatterSound').playbackRate = 0.8 + Math.random() * 0.4;
+            document.getElementById('shatterSound').currentTime = 0;
+            document.getElementById('shatterSound').play();
+            
+            broken.add(container);
+
+            const rect = container.getBoundingClientRect();
+            updateReaction();
+            const velocities = [
+                { x: -2, y: -5, rotation: -5 },
+                { x: 2, y: -5, rotation: 5 },
+                { x: -2, y: -3, rotation: -3 },
+                { x: 2, y: -3, rotation: 3 }
+            ];
+            
+            const text = container.querySelector('.text').textContent;
+            const partLength = Math.ceil(text.length / 4);
+            const textParts = [];
+            for (let i = 0; i < 4; i++) {
+                textParts.push(text.substr(i * partLength, partLength));
+            }
+
+            for (let i = 0; i < 4; i++) {
+                const piece = document.createElement('div');
+                piece.className = 'piece';
+                piece.style.width = (rect.width / 2 - 4) + 'px';
+                piece.style.height = (rect.height / 2 - 4) + 'px';
+                piece.style.left = rect.left + (i % 2) * (rect.width / 2) + 'px';
+                piece.style.top = rect.top + Math.floor(i / 2) * (rect.height / 2) + 'px';
+                
+                const textElement = document.createElement('p');
+                textElement.className = 'text';
+                textElement.style.fontSize = '12px';
+                textElement.textContent = textParts[i];
+                piece.appendChild(textElement);
+                
+                document.body.appendChild(piece);
+                pieces.push({
+                    element: piece,
+                    x: parseFloat(piece.style.left),
+                    y: parseFloat(piece.style.top),
+                    vx: velocities[i].x,
+                    vy: velocities[i].y,
+                    rotation: 0,
+                    rotationSpeed: velocities[i].rotation,
+                    createdAt: Date.now()
+                });
+            }
+
+            container.style.display = 'none';
+        });
+    });
+
+    const createShards = (piece, count = 2, generation = 1) => {
+        if (generation >= 4) return [];
+        
+        const rect = piece.element.getBoundingClientRect();
+        const scale = 1 / (generation * 0.65);
+        const newShards = [];
+        const velocities = count === 2 ? [
+            { x: -3, y: -4, rotation: -8 },
+            { x: 3, y: -4, rotation: 8 }
+        ] : [
+            { x: -4, y: -5, rotation: -12 },
+            { x: 0, y: -6, rotation: 0 },
+            { x: 4, y: -5, rotation: 12 }
+        ];
+
+        piece.element.remove();
+
+        for (let i = 0; i < count; i++) {
+            const shard = document.createElement('div');
+            shard.className = 'shard';
+            const parentWidth = parseInt(piece.element.style.width);
+            const parentHeight = parseInt(piece.element.style.height);
+            const size = Math.min(parentWidth, parentHeight) * scale;
+            shard.style.width = `${size}px`;
+            shard.style.height = `${size}px`;
+            shard.style.left = piece.x + 'px';
+            shard.style.top = piece.y + 'px';
+
+            document.body.appendChild(shard);
+            newShards.push({
+                element: shard,
+                x: piece.x,
+                y: piece.y,
+                vx: velocities[i].x + piece.vx * 0.5,
+                vy: velocities[i].y + piece.vy * 0.5,
+                rotation: piece.rotation,
+                rotationSpeed: velocities[i].rotation + piece.rotationSpeed,
+                createdAt: Date.now(),
+                generation: generation
+            });
+        }
+
+        return newShards;
+    };
+
+    function animate() {
+        const gravity = 0.5;
+        const bounce = 0.6;
+        const friction = 0.98;
+        const floor = window.innerHeight - 5;
+        const ceil = 0;
+        const leftWall = 0;
+        const rightWall = window.innerWidth;
+
+        for (let i = pieces.length - 1; i >= 0; i--) {
+            const piece = pieces[i];
+            const timeSinceFall = Date.now() - piece.createdAt;
+
+            if (timeSinceFall > 2000) {
+                const newShards = createShards(piece, 2, 1);
+                shards.push(...newShards);
+                pieces.splice(i, 1);
+                continue;
+            }
+
+            piece.vy += gravity;
+            piece.x += piece.vx;
+            piece.y += piece.vy;
+            piece.rotation += piece.rotationSpeed;
+
+            if (piece.y > floor) {
+                piece.y = floor;
+                piece.vy = -piece.vy * bounce;
+                piece.rotationSpeed *= bounce;
+                piece.vx *= friction;
+            }
+            if (piece.y < ceil) {
+                piece.y = ceil;
+                piece.vy = -piece.vy * bounce;
+                piece.rotationSpeed *= bounce;
+            }
+            if (piece.x < leftWall) {
+                piece.x = leftWall;
+                piece.vx = -piece.vx * bounce;
+                piece.rotationSpeed *= -bounce;
+            }
+            if (piece.x > rightWall) {
+                piece.x = rightWall;
+                piece.vx = -piece.vx * bounce;
+                piece.rotationSpeed *= -bounce;
+            }
+
+            piece.element.style.left = piece.x + 'px';
+            piece.element.style.top = piece.y + 'px';
+            piece.element.style.transform = `rotate(${piece.rotation}deg)`;
+        }
+
+        for (let i = shards.length - 1; i >= 0; i--) {
+            const shard = shards[i];
+            const timeSinceFall = Date.now() - shard.createdAt;
+
+            if (timeSinceFall > 1000 && shard.generation < 3) {
+                const newShards = createShards(shard, 3, shard.generation + 1);
+                shards.push(...newShards);
+                shards.splice(i, 1);
+                continue;
+            }
+
+            shard.vy += gravity;
+            shard.x += shard.vx;
+            shard.y += shard.vy;
+            shard.rotation += shard.rotationSpeed;
+
+            if (shard.y > floor) {
+                shard.y = floor;
+                shard.vy = -shard.vy * bounce;
+                shard.rotationSpeed *= bounce;
+                shard.vx *= friction;
+            }
+            if (shard.y < ceil) {
+                shard.y = ceil;
+                shard.vy = -shard.vy * bounce;
+                shard.rotationSpeed *= bounce;
+            }
+            if (shard.x < leftWall) {
+                shard.x = leftWall;
+                shard.vx = -shard.vx * bounce;
+                shard.rotationSpeed *= -bounce;
+            }
+            if (shard.x > rightWall) {
+                shard.x = rightWall;
+                shard.vx = -shard.vx * bounce;
+                shard.rotationSpeed *= -bounce;
+            }
+
+            shard.element.style.left = shard.x + 'px';
+            shard.element.style.top = shard.y + 'px';
+            shard.element.style.transform = `rotate(${shard.rotation}deg)`;
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+    </script>
+</body></html>
